@@ -1,0 +1,194 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Booking Konsultasi — Notaris A. Wijaya</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== TOPBAR ===== -->
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <a href="index.html" class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          Notaris A. Wijaya
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="mainnav">Menu</button>
+        <nav class="nav" id="mainnav" aria-label="Navigasi utama">
+          <a href="index.html">Beranda</a>
+          <a href="booking.html" aria-current="page">Booking</a>
+          <a href="tracking.html">Tracking Dokumen</a>
+          <a href="dashboard.html">Profil Notaris</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HEADER HALAMAN ===== -->
+  <section class="hero" style="padding-bottom:2.5rem">
+    <div class="container">
+      <div class="hero-meta">
+        <span class="label label--red">Layanan Booking</span>
+        <span class="label label--muted">Slot Senin–Jumat / 09.00–16.00 WIB</span>
+      </div>
+      <h1 class="display" style="font-size:clamp(2.25rem,5.5vw,4.5rem)">Booking Jadwal Konsultasi</h1>
+      <p class="lead mt-2">
+        Isi formulir di bawah, pilih slot yang tersedia, dan konfirmasi akan
+        dikirim ke email Anda dalam 1×24 jam kerja.
+      </p>
+    </div>
+  </section>
+
+  <!-- ===== FORM BOOKING ===== -->
+  <section class="section" style="border-top:0;padding-top:0">
+    <div class="container">
+      <div class="grid grid--3" style="align-items:start">
+        <form class="stack-3" style="grid-column:span 2;padding:var(--pad)" action="#" method="post">
+
+          <div>
+            <span class="label label--red">Bagian 01</span>
+            <h3 class="mt-1 up">Data Pemohon</h3>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="nama">Nama Lengkap <span class="req">*</span></label>
+              <input type="text" id="nama" name="nama" placeholder="Sesuai KTP" required>
+            </div>
+            <div class="field">
+              <label for="nik">NIK <span class="req">*</span></label>
+              <input type="text" id="nik" name="nik" inputmode="numeric" maxlength="16" placeholder="16 digit" required>
+            </div>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="telepon">No. Telepon / WhatsApp <span class="req">*</span></label>
+              <input type="tel" id="telepon" name="telepon" placeholder="+62 …" required>
+            </div>
+            <div class="field">
+              <label for="email">Email <span class="req">*</span></label>
+              <input type="email" id="email" name="email" placeholder="nama@email.com" required>
+            </div>
+          </div>
+
+          <div>
+            <span class="label label--red">Bagian 02</span>
+            <h3 class="mt-1 up">Detail Kebutuhan</h3>
+          </div>
+
+          <div class="form-row">
+            <div class="field">
+              <label for="layanan">Jenis Layanan <span class="req">*</span></label>
+              <select id="layanan" name="layanan" required>
+                <option value="">— Pilih layanan —</option>
+                <option>Akta Jual Beli</option>
+                <option>Akta Pendirian PT / CV</option>
+                <option>Perjanjian / Kontrak</option>
+                <option>Hibah / Wasiat</option>
+                <option>Legalisasi &amp; Waarmerking</option>
+                <option>Konsultasi Hukum Umum</option>
+              </select>
+            </div>
+            <div class="field">
+              <label for="pihak">Jumlah Pihak yang Hadir</label>
+              <select id="pihak" name="pihak">
+                <option>1 orang</option>
+                <option>2 orang</option>
+                <option>Lebih dari 2 orang</option>
+              </select>
+            </div>
+          </div>
+
+          <div class="field">
+            <label for="catatan">Ringkasan Kebutuhan</label>
+            <textarea id="catatan" name="catatan" placeholder="Ceritakan singkat dokumen atau masalah hukum yang ingin ditangani…"></textarea>
+          </div>
+
+          <div>
+            <span class="label label--red">Bagian 03</span>
+            <h3 class="mt-1 up">Pilih Jadwal</h3>
+          </div>
+
+          <div class="field" style="border:0;padding:0">
+            <label for="tanggal">Tanggal Konsultasi <span class="req">*</span></label>
+            <input type="date" id="tanggal" name="tanggal" required>
+          </div>
+
+          <fieldset style="border:0">
+            <legend class="label mb-2">Slot Waktu — status hari ini <span class="req">*</span></legend>
+            <div class="slots">
+              <label class="slot slot--off"><input type="radio" name="slot" disabled><span>09:00</span></label>
+              <label class="slot"><input type="radio" name="slot" value="10:00" required><span>10:00</span></label>
+              <label class="slot"><input type="radio" name="slot" value="11:00"><span>11:00</span></label>
+              <label class="slot"><input type="radio" name="slot" value="13:00"><span>13:00</span></label>
+              <label class="slot"><input type="radio" name="slot" value="14:00"><span>14:00</span></label>
+              <label class="slot slot--off"><input type="radio" name="slot" disabled><span>15:00</span></label>
+              <label class="slot"><input type="radio" name="slot" value="15:30"><span>15:30</span></label>
+              <label class="slot"><input type="radio" name="slot" value="16:00"><span>16:00</span></label>
+            </div>
+            <p class="idx mt-1">Slot bergaris dicoret = penuh. Durasi tiap sesi 60 menit.</p>
+          </fieldset>
+
+          <button type="submit" class="btn btn--primary btn--block">Kirim Permintaan Booking →</button>
+          <p class="idx">Dengan mengirim, Anda menyetujui jadwal dikonfirmasi ulang oleh staf kantor via email.</p>
+        </form>
+
+        <!-- Sidebar info -->
+        <aside class="stack-3">
+          <div class="grid" style="grid-template-columns:1fr">
+            <div class="stat">
+              <span class="label label--red">Jam Operasional</span>
+              <span class="num">Senin – Jumat<br>09.00 – 16.00 WIB</span>
+            </div>
+            <div class="stat">
+              <span class="label label--muted">Sabtu</span>
+              <span class="num muted">Dengan perjanjian</span>
+            </div>
+            <div class="stat">
+              <span class="label label--muted">Minggu &amp; Libur Nasional</span>
+              <span class="num muted">Tutup</span>
+            </div>
+          </div>
+          <div class="grid" style="grid-template-columns:1fr">
+            <div class="stat">
+              <span class="label label--muted">Alamat</span>
+              <span>Jl. Kemang Raya No. 12<br>Jakarta Selatan 12730</span>
+            </div>
+            <div class="stat">
+              <span class="label label--muted">Telepon</span>
+              <span class="num">(021) 719-4482</span>
+            </div>
+            <div class="stat">
+              <span class="label label--muted">Email</span>
+              <span>info@notariswijaya.id</span>
+            </div>
+          </div>
+        </aside>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-legal" style="margin-top:0;padding-top:0;border-top:0">
+        <span>© 2026 Kantor Notaris Amanda Wijaya, S.H., M.Kn.</span>
+        <span>Jakarta — Indonesia</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>

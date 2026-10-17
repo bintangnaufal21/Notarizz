@@ -1,0 +1,844 @@
+/* ============================================================
+   KANTOR NOTARIS — Sistem Informasi
+   Style: Swiss / International Typographic
+   ============================================================ */
+
+/* ---------- Tokens ---------- */
+:root {
+  --paper: #f2f0eb;          /* latar netral hangat */
+  --white: #ffffff;
+  --ink: #111111;            /* hitam tinta */
+  --ink-soft: #55524c;       /* teks sekunder */
+  --line: #111111;           /* garis rambut */
+  --line-soft: #d8d4cc;      /* garis sekunder */
+  --red: #e2231a;            /* satu-satunya aksen */
+  --red-dark: #b71c12;
+
+  --font-sans: "Helvetica Neue", Helvetica, Arial, "Segoe UI", sans-serif;
+  --font-mono: "IBM Plex Mono", "Courier New", monospace;
+
+  --track: 0.14em;           /* letter-spacing label mikro */
+  --gap: 2rem;
+  --pad: 1.5rem;
+  --maxw: 1280px;
+}
+
+/* ---------- Reset ---------- */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  -webkit-text-size-adjust: 100%;
+}
+
+body {
+  font-family: var(--font-sans);
+  background: var(--paper);
+  color: var(--ink);
+  font-size: 16px;
+  line-height: 1.5;
+  -webkit-font-smoothing: antialiased;
+}
+
+img {
+  max-width: 100%;
+  display: block;
+}
+
+a {
+  color: inherit;
+  text-decoration: none;
+}
+
+button {
+  font: inherit;
+  cursor: pointer;
+  background: none;
+  border: 0;
+  color: inherit;
+}
+
+ul,
+ol {
+  list-style: none;
+}
+
+/* ---------- Label mikro (khas Swiss) ---------- */
+.label {
+  display: inline-block;
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: var(--track);
+  text-transform: uppercase;
+}
+
+.label--muted {
+  color: var(--ink-soft);
+}
+
+.label--red {
+  color: var(--red);
+}
+
+.idx {
+  font-family: var(--font-mono);
+  font-size: 12px;
+  font-weight: 400;
+  letter-spacing: 0.08em;
+  color: var(--ink-soft);
+}
+
+/* ---------- Tipografi ---------- */
+h1,
+h2,
+h3 {
+  font-weight: 700;
+  line-height: 1.02;
+  letter-spacing: -0.02em;
+  text-transform: uppercase;
+}
+
+.display {
+  font-size: clamp(2.75rem, 7.5vw, 6.5rem);
+  line-height: 0.96;
+}
+
+h2 {
+  font-size: clamp(1.75rem, 4vw, 3.25rem);
+}
+
+h3 {
+  font-size: 1.125rem;
+  letter-spacing: 0;
+}
+
+p {
+  max-width: 62ch;
+}
+
+p.lead {
+  font-size: 1.125rem;
+  color: var(--ink-soft);
+}
+
+.num {
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Layout ---------- */
+.container {
+  max-width: var(--maxw);
+  margin: 0 auto;
+  padding: 0 var(--pad);
+}
+
+.section {
+  padding: 4.5rem 0;
+  border-top: 1px solid var(--line);
+}
+
+.section-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: baseline;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+/* Grid bergaris khas Swiss: sel dipisah hairline */
+.grid {
+  display: grid;
+  border: 1px solid var(--line);
+  border-right: 0;
+  border-bottom: 0;
+}
+
+.grid > * {
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+  padding: var(--pad);
+}
+
+.grid--2 {
+  grid-template-columns: repeat(2, 1fr);
+}
+
+.grid--3 {
+  grid-template-columns: repeat(3, 1fr);
+}
+
+.grid--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+/* ---------- Header / Navigasi ---------- */
+.topbar {
+  border-bottom: 1px solid var(--line);
+  background: var(--paper);
+  position: sticky;
+  top: 0;
+  z-index: 50;
+}
+
+.topbar-inner {
+  display: flex;
+  align-items: stretch;
+  min-height: 64px;
+}
+
+.brand {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  font-weight: 700;
+  letter-spacing: var(--track);
+  text-transform: uppercase;
+  font-size: 13px;
+  border-right: 1px solid var(--line);
+  padding-right: 1.5rem;
+}
+
+.brand-mark {
+  width: 22px;
+  height: 22px;
+  background: var(--red);
+  flex: none;
+}
+
+.nav {
+  display: flex;
+  align-items: stretch;
+  margin-left: auto;
+}
+
+.nav a {
+  display: flex;
+  align-items: center;
+  padding: 0 1.25rem;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: var(--track);
+  text-transform: uppercase;
+  border-left: 1px solid var(--line);
+  transition: background 0.15s ease, color 0.15s ease;
+}
+
+.nav a:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.nav a[aria-current="page"] {
+  background: var(--red);
+  color: var(--white);
+}
+
+.nav a[aria-current="page"]:hover {
+  background: var(--red-dark);
+  color: var(--white);
+}
+
+/* Tombol menu mobile */
+.nav-toggle {
+  display: none;
+  padding: 0 1.25rem;
+  border-left: 1px solid var(--line);
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: var(--track);
+  text-transform: uppercase;
+}
+
+/* ---------- Hero ---------- */
+.hero {
+  padding: 5rem 0 4rem;
+}
+
+.hero-meta {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  margin-bottom: 2.5rem;
+  flex-wrap: wrap;
+}
+
+.hero h1 span {
+  display: block;
+}
+
+.hero h1 .accent {
+  color: var(--red);
+}
+
+.hero-foot {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-end;
+  gap: 2rem;
+  margin-top: 3rem;
+  flex-wrap: wrap;
+}
+
+/* ---------- Tombol ---------- */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.75rem;
+  padding: 0.9rem 1.5rem;
+  font-size: 12px;
+  font-weight: 700;
+  letter-spacing: var(--track);
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+  transition: background 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+}
+
+.btn--primary {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--white);
+}
+
+.btn--primary:hover {
+  background: var(--red-dark);
+  border-color: var(--red-dark);
+}
+
+.btn--ghost:hover {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.btn--block {
+  width: 100%;
+  justify-content: center;
+}
+
+/* ---------- Kartu layanan ---------- */
+.service {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-height: 220px;
+  transition: background 0.15s ease;
+}
+
+.service:hover {
+  background: var(--white);
+}
+
+.service .idx {
+  margin-bottom: auto;
+}
+
+.service h3 {
+  text-transform: uppercase;
+}
+
+.service p {
+  font-size: 0.875rem;
+  color: var(--ink-soft);
+}
+
+/* ---------- Langkah kerja ---------- */
+.steps {
+  counter-reset: step;
+}
+
+.step {
+  display: grid;
+  grid-template-columns: 96px 1fr 1fr;
+  gap: var(--pad);
+  padding: 1.75rem 0;
+  border-top: 1px solid var(--line);
+  align-items: baseline;
+}
+
+.step:last-child {
+  border-bottom: 1px solid var(--line);
+}
+
+.step-no {
+  font-size: 2.5rem;
+  font-weight: 700;
+  letter-spacing: -0.02em;
+  color: var(--red);
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- CTA strip ---------- */
+.cta {
+  background: var(--ink);
+  color: var(--paper);
+  border-top: 1px solid var(--line);
+}
+
+.cta .btn--ghost {
+  border-color: var(--paper);
+}
+
+.cta .btn--ghost:hover {
+  background: var(--paper);
+  color: var(--ink);
+}
+
+/* ---------- Form ---------- */
+.field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  padding: 1rem 0;
+  border-bottom: 1px solid var(--line-soft);
+}
+
+.field label {
+  font-size: 11px;
+  font-weight: 700;
+  letter-spacing: var(--track);
+  text-transform: uppercase;
+}
+
+.field .req {
+  color: var(--red);
+}
+
+.field input,
+.field select,
+.field textarea {
+  font: inherit;
+  font-size: 1rem;
+  padding: 0.65rem 0;
+  border: 0;
+  border-bottom: 1px solid var(--line);
+  background: transparent;
+  border-radius: 0;
+  color: var(--ink);
+}
+
+.field textarea {
+  resize: vertical;
+  min-height: 88px;
+}
+
+.field input:focus,
+.field select:focus,
+.field textarea:focus {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+.form-row {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 2rem;
+}
+
+/* Slot waktu (radio ala grid Swiss) */
+.slots {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 0;
+  border: 1px solid var(--line);
+}
+
+.slot {
+  position: relative;
+  border-right: 1px solid var(--line);
+  border-bottom: 1px solid var(--line);
+}
+
+.slot:nth-child(4n) {
+  border-right: 0;
+}
+
+.slot:nth-last-child(-n + 4) {
+  border-bottom: 0;
+}
+
+.slot input {
+  position: absolute;
+  opacity: 0;
+  inset: 0;
+  cursor: pointer;
+}
+
+.slot span {
+  display: block;
+  text-align: center;
+  padding: 0.85rem 0.5rem;
+  font-size: 0.875rem;
+  font-weight: 700;
+  font-variant-numeric: tabular-nums;
+  transition: background 0.12s ease, color 0.12s ease;
+}
+
+.slot input:checked + span {
+  background: var(--red);
+  color: var(--white);
+}
+
+.slot input:focus-visible + span {
+  outline: 2px solid var(--ink);
+  outline-offset: -3px;
+}
+
+.slot--off span {
+  color: var(--line-soft);
+  text-decoration: line-through;
+  cursor: not-allowed;
+}
+
+.slot--off input {
+  cursor: not-allowed;
+}
+
+/* ---------- Status / Badge ---------- */
+.badge {
+  display: inline-block;
+  padding: 0.3rem 0.6rem;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: var(--track);
+  text-transform: uppercase;
+  border: 1px solid var(--line);
+  white-space: nowrap;
+}
+
+.badge--done {
+  background: var(--ink);
+  color: var(--paper);
+}
+
+.badge--progress {
+  background: var(--red);
+  border-color: var(--red);
+  color: var(--white);
+}
+
+.badge--wait {
+  color: var(--ink-soft);
+}
+
+/* ---------- Timeline tracking ---------- */
+.timeline {
+  border: 1px solid var(--line);
+}
+
+.timeline-row {
+  display: grid;
+  grid-template-columns: 120px 1fr auto;
+  gap: var(--pad);
+  padding: 1.1rem var(--pad);
+  border-bottom: 1px solid var(--line);
+  align-items: baseline;
+}
+
+.timeline-row:last-child {
+  border-bottom: 0;
+}
+
+.timeline-row.is-active {
+  background: var(--white);
+  box-shadow: inset 4px 0 0 var(--red);
+}
+
+.timeline-row.is-pending {
+  color: var(--ink-soft);
+}
+
+.tl-time {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+/* ---------- Tabel ---------- */
+.table-wrap {
+  border: 1px solid var(--line);
+  overflow-x: auto;
+}
+
+table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: 0.9rem;
+}
+
+th {
+  text-align: left;
+  font-size: 10px;
+  font-weight: 700;
+  letter-spacing: var(--track);
+  text-transform: uppercase;
+  padding: 0.75rem 1rem;
+  border-bottom: 1px solid var(--line);
+  background: var(--white);
+  white-space: nowrap;
+}
+
+td {
+  padding: 0.85rem 1rem;
+  border-bottom: 1px solid var(--line-soft);
+  vertical-align: top;
+}
+
+tr:last-child td {
+  border-bottom: 0;
+}
+
+tbody tr:hover {
+  background: var(--white);
+}
+
+td.mono {
+  font-family: var(--font-mono);
+  font-size: 0.8rem;
+}
+
+/* ---------- Dashboard ---------- */
+.dash-layout {
+  display: grid;
+  grid-template-columns: 340px 1fr;
+  gap: 0;
+  align-items: start;
+}
+
+.profile-card {
+  border: 1px solid var(--line);
+  position: sticky;
+  top: 88px;
+}
+
+.profile-photo {
+  aspect-ratio: 1 / 1;
+  background: repeating-linear-gradient(
+    -45deg,
+    var(--paper),
+    var(--paper) 10px,
+    var(--line-soft) 10px,
+    var(--line-soft) 11px
+  );
+  border-bottom: 1px solid var(--line);
+  display: flex;
+  align-items: flex-end;
+  justify-content: flex-end;
+  padding: 0.75rem;
+}
+
+.profile-photo .label {
+  background: var(--red);
+  color: var(--white);
+  padding: 0.25rem 0.5rem;
+}
+
+.profile-body {
+  padding: var(--pad);
+}
+
+.profile-body h2 {
+  font-size: 1.5rem;
+  margin: 0.35rem 0 1rem;
+}
+
+.profile-facts {
+  border-top: 1px solid var(--line);
+}
+
+.profile-facts li {
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  padding: 0.6rem 0;
+  border-bottom: 1px solid var(--line-soft);
+  font-size: 0.85rem;
+}
+
+.profile-facts .label {
+  font-size: 10px;
+  color: var(--ink-soft);
+}
+
+.stat {
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+}
+
+.stat .num {
+  font-size: 2.75rem;
+  font-weight: 700;
+  line-height: 1;
+  letter-spacing: -0.02em;
+  font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Pencarian tracking ---------- */
+.searchbar {
+  display: flex;
+  border: 1px solid var(--line);
+}
+
+.searchbar input {
+  flex: 1;
+  font: inherit;
+  font-size: 1.1rem;
+  padding: 1rem 1.25rem;
+  border: 0;
+  background: var(--white);
+  min-width: 0;
+}
+
+.searchbar input:focus {
+  outline: 2px solid var(--red);
+  outline-offset: -2px;
+}
+
+.searchbar .btn {
+  border: 0;
+  border-left: 1px solid var(--line);
+}
+
+/* ---------- Footer ---------- */
+.footer {
+  border-top: 1px solid var(--line);
+  padding: 3rem 0 2rem;
+  margin-top: 0;
+}
+
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr;
+  gap: var(--pad);
+}
+
+.footer .col ul {
+  margin-top: 0.75rem;
+  display: grid;
+  gap: 0.4rem;
+  font-size: 0.9rem;
+}
+
+.footer-legal {
+  margin-top: 2.5rem;
+  padding-top: 1rem;
+  border-top: 1px solid var(--line);
+  display: flex;
+  justify-content: space-between;
+  gap: 1rem;
+  flex-wrap: wrap;
+  font-size: 11px;
+  letter-spacing: var(--track);
+  text-transform: uppercase;
+  color: var(--ink-soft);
+}
+
+/* ---------- Util ---------- */
+.mt-1 { margin-top: 0.5rem; }
+.mt-2 { margin-top: 1rem; }
+.mt-3 { margin-top: 1.5rem; }
+.mt-4 { margin-top: 2.5rem; }
+.mb-2 { margin-bottom: 1rem; }
+.mb-3 { margin-bottom: 1.5rem; }
+.mono { font-family: var(--font-mono); }
+.muted { color: var(--ink-soft); }
+.up { text-transform: uppercase; }
+.w-100 { width: 100%; }
+
+.stack-2 > * + * { margin-top: 1rem; }
+.stack-3 > * + * { margin-top: 1.5rem; }
+
+/* ---------- Fokus global ---------- */
+:focus-visible {
+  outline: 2px solid var(--red);
+  outline-offset: 2px;
+}
+
+/* ---------- Responsive ---------- */
+@media (max-width: 960px) {
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .dash-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .profile-card {
+    position: static;
+  }
+
+  .step {
+    grid-template-columns: 64px 1fr;
+  }
+
+  .step p {
+    grid-column: 2;
+  }
+
+  .footer-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+@media (max-width: 720px) {
+  .nav {
+    display: none;
+    position: absolute;
+    top: 64px;
+    left: 0;
+    right: 0;
+    flex-direction: column;
+    background: var(--paper);
+    border-bottom: 1px solid var(--line);
+  }
+
+  .nav a {
+    border-left: 0;
+    border-top: 1px solid var(--line);
+    padding: 1rem 1.5rem;
+  }
+
+  .nav.is-open {
+    display: flex;
+  }
+
+  .nav-toggle {
+    display: block;
+  }
+
+  .grid--2,
+  .grid--3,
+  .grid--4 {
+    grid-template-columns: 1fr;
+  }
+
+  .slot {
+    grid-template-columns: repeat(2, 1fr);
+  }
+
+  .form-row {
+    grid-template-columns: 1fr;
+  }
+
+  .timeline-row {
+    grid-template-columns: 1fr auto;
+  }
+
+  .tl-time {
+    grid-column: 1 / -1;
+  }
+}
+
+/* ---------- Reduced motion ---------- */
+@media (prefers-reduced-motion: reduce) {
+  * {
+    transition: none !important;
+    animation: none !important;
+  }
+}

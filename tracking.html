@@ -1,0 +1,197 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Tracking Dokumen — Notaris A. Wijaya</title>
+  <link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+  <!-- ===== TOPBAR ===== -->
+  <header class="topbar">
+    <div class="container">
+      <div class="topbar-inner">
+        <a href="index.html" class="brand">
+          <span class="brand-mark" aria-hidden="true"></span>
+          Notaris A. Wijaya
+        </a>
+        <button class="nav-toggle" aria-expanded="false" aria-controls="mainnav">Menu</button>
+        <nav class="nav" id="mainnav" aria-label="Navigasi utama">
+          <a href="index.html">Beranda</a>
+          <a href="booking.html">Booking</a>
+          <a href="tracking.html" aria-current="page">Tracking Dokumen</a>
+          <a href="dashboard.html">Profil Notaris</a>
+        </nav>
+      </div>
+    </div>
+  </header>
+
+  <!-- ===== HEADER HALAMAN ===== -->
+  <section class="hero" style="padding-bottom:2.5rem">
+    <div class="container">
+      <div class="hero-meta">
+        <span class="label label--red">Layanan Tracking</span>
+        <span class="label label--muted">Diperbarui otomatis setiap perubahan tahap</span>
+      </div>
+      <h1 class="display" style="font-size:clamp(2.25rem,5.5vw,4.5rem)">Tracking Dokumen</h1>
+    </div>
+  </section>
+
+  <!-- ===== PENCARIAN ===== -->
+  <section class="section" style="border-top:0;padding-top:0">
+    <div class="container">
+      <form class="searchbar" action="#" method="get">
+        <input type="text" name="kode" placeholder="Masukkan kode dokumen, contoh: NW-2026-0847" aria-label="Kode dokumen">
+        <button type="submit" class="btn btn--primary">Lacak →</button>
+      </form>
+      <p class="idx mt-1">Kode dokumen tercantum pada email konfirmasi booking Anda.</p>
+    </div>
+  </section>
+
+  <!-- ===== HASIL TRACKING (contoh status) ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>NW-2026-0847 / Status</h2>
+        <span class="badge badge--progress">Sedang Diproses</span>
+      </div>
+
+      <div class="grid grid--4 mb-3">
+        <div class="stat">
+          <span class="label label--muted">Jenis Dokumen</span>
+          <span class="num">Akta Jual Beli</span>
+        </div>
+        <div class="stat">
+          <span class="label label--muted">Pemohon</span>
+          <span class="num">Budi Santoso</span>
+        </div>
+        <div class="stat">
+          <span class="label label--muted">Dibuat</span>
+          <span class="num">12 Okt 2026</span>
+        </div>
+        <div class="stat">
+          <span class="label label--muted">Estimasi Selesai</span>
+          <span class="num">17 Okt 2026</span>
+        </div>
+      </div>
+
+      <!-- Timeline -->
+      <div class="timeline">
+        <div class="timeline-row">
+          <span class="tl-time">12 Okt / 09:14</span>
+          <div>
+            <span class="label">Dokumen Diterima</span>
+            <p class="muted" style="font-size:0.875rem">Berkas awal diterima staf administrasi. Kelengkapan diperiksa.</p>
+          </div>
+          <span class="badge badge--done">Selesai</span>
+        </div>
+        <div class="timeline-row">
+          <span class="tl-time">13 Okt / 11:30</span>
+          <div>
+            <span class="label">Verifikasi Data &amp; Sertifikat</span>
+            <p class="muted" style="font-size:0.875rem">Pengecekan sertifikat ke BPN dan verifikasi identitas para pihak.</p>
+          </div>
+          <span class="badge badge--done">Selesai</span>
+        </div>
+        <div class="timeline-row is-active">
+          <span class="tl-time">15 Okt / 13:02</span>
+          <div>
+            <span class="label">Penyusunan Draf Akta</span>
+            <p class="muted" style="font-size:0.875rem">Draf akta sedang disusun oleh notaris. Menunggu persetujuan para pihak.</p>
+          </div>
+          <span class="badge badge--progress">Berjalan</span>
+        </div>
+        <div class="timeline-row is-pending">
+          <span class="tl-time">—</span>
+          <div>
+            <span class="label">Tanda Tangan &amp; Pengesahan</span>
+            <p class="muted">Menunggu tahap sebelumnya selesai.</p>
+          </div>
+          <span class="badge badge--wait">Menunggu</span>
+        </div>
+        <div class="timeline-row is-pending">
+          <span class="tl-time">—</span>
+          <div>
+            <span class="label">Serah Terima Minuta</span>
+            <p class="muted">Menunggu tahap sebelumnya selesai.</p>
+          </div>
+          <span class="badge badge--wait">Menunggu</span>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== RIWAYAT DOKUMEN (contoh tabel) ===== -->
+  <section class="section">
+    <div class="container">
+      <div class="section-head">
+        <h2>Semua Dokumen / Riwayat</h2>
+        <span class="label label--muted">4 dokumen terakhir</span>
+      </div>
+      <div class="table-wrap">
+        <table>
+          <thead>
+            <tr>
+              <th>Kode</th>
+              <th>Jenis Dokumen</th>
+              <th>Tanggal Masuk</th>
+              <th>Tahap Saat Ini</th>
+              <th>Status</th>
+            </tr>
+          </thead>
+          <tbody>
+            <tr>
+              <td class="mono">NW-2026-0847</td>
+              <td>Akta Jual Beli</td>
+              <td class="num">12 Okt 2026</td>
+              <td>Penyusunan Draf</td>
+              <td><span class="badge badge--progress">Berjalan</span></td>
+            </tr>
+            <tr>
+              <td class="mono">NW-2026-0831</td>
+              <td>Pendirian PT</td>
+              <td class="num">03 Okt 2026</td>
+              <td>Pengesahan SK Kemenkumham</td>
+              <td><span class="badge badge--progress">Berjalan</span></td>
+            </tr>
+            <tr>
+              <td class="mono">NW-2026-0815</td>
+              <td>Legalisasi Dokumen</td>
+              <td class="num">28 Sep 2026</td>
+              <td>Diambil pemohon</td>
+              <td><span class="badge badge--done">Selesai</span></td>
+            </tr>
+            <tr>
+              <td class="mono">NW-2026-0802</td>
+              <td>Perjanjian Kerja Sama</td>
+              <td class="num">20 Sep 2026</td>
+              <td>Diambil pemohon</td>
+              <td><span class="badge badge--done">Selesai</span></td>
+            </tr>
+          </tbody>
+        </table>
+      </div>
+    </div>
+  </section>
+
+  <!-- ===== FOOTER ===== -->
+  <footer class="footer">
+    <div class="container">
+      <div class="footer-legal" style="margin-top:0;padding-top:0;border-top:0">
+        <span>© 2026 Kantor Notaris Amanda Wijaya, S.H., M.Kn.</span>
+        <span>Jakarta — Indonesia</span>
+      </div>
+    </div>
+  </footer>
+
+  <script>
+    const toggle = document.querySelector('.nav-toggle');
+    const nav = document.querySelector('.nav');
+    toggle.addEventListener('click', () => {
+      const open = nav.classList.toggle('is-open');
+      toggle.setAttribute('aria-expanded', open);
+    });
+  </script>
+</body>
+</html>
